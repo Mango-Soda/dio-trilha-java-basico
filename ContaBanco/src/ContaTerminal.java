@@ -6,15 +6,13 @@ public class ContaTerminal {
     String nomeCliente;
     float saldo;
 
-    public ContaTerminal(int numero, String agencia, String nomeCliente, float saldo)
-    {
+    public ContaTerminal(int numero, String agencia, String nomeCliente, float saldo){
         this.agencia = agencia;
         this.nomeCliente = nomeCliente;
         this.saldo = saldo;
     }
     
-    public ContaTerminal receberDados() throws Exception
-    {
+    public ContaTerminal receberDados() throws Exception{
         Scanner scanner = new Scanner(System.in);
         this.numero = Integer.parseInt(lerEntrada(scanner, "Digite o número da conta bancária:"));
         this.agencia = lerEntrada(scanner, "Digite o nome da agência:");
@@ -24,8 +22,7 @@ public class ContaTerminal {
         return new ContaTerminal(numero, agencia, nomeCliente, saldo);
     }
 
-    public String lerEntrada(Scanner scanner, String mensagem)
-    {
+    public String lerEntrada(Scanner scanner, String mensagem){
         System.out.println(mensagem);
         return scanner.nextLine();
     }
